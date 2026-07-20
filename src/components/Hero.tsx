@@ -165,24 +165,6 @@ export default function Hero({ currentLang, setActiveTab, homeConfig }: HeroProp
                 )}
               </AnimatePresence>
 
-              {/* Slider Controls */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
-                <button
-                  onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-black/40 hover:bg-brand-red text-white flex items-center justify-center transition-colors backdrop-blur-xs pointer-events-auto"
-                  id="slide-prev-btn"
-                >
-                  {isRtl ? <ArrowRight className="w-5 h-5" /> : <ArrowLeft className="w-5 h-5" />}
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-black/40 hover:bg-brand-red text-white flex items-center justify-center transition-colors backdrop-blur-xs pointer-events-auto"
-                  id="slide-next-btn"
-                >
-                  {isRtl ? <ArrowLeft className="w-5 h-5" /> : <ArrowRight className="w-5 h-5" />}
-                </button>
-              </div>
-
               {/* Slide indicators */}
               <div className="absolute top-4 right-4 flex gap-1.5 bg-black/30 backdrop-blur-md px-2.5 py-1.5 rounded-full">
                 {slides.map((_, idx) => (
@@ -202,7 +184,7 @@ export default function Hero({ currentLang, setActiveTab, homeConfig }: HeroProp
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.5, type: 'spring' }}
-              className={`absolute -bottom-6 ${isRtl ? '-left-4' : '-right-4'} bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-2xl p-4 shadow-xl max-w-xs border border-white/20`}
+              className={`absolute -bottom-6 ${isRtl ? '-left-4' : '-right-4'} bg-gradient-to-r from-brand-red to-brand-red-dark text-white rounded-2xl p-4 shadow-xl max-w-xs border border-white/20 hidden md:block`}
             >
               <p className="text-[10px] uppercase tracking-wider text-white/80 font-bold mb-1">
                 {activePromo}
